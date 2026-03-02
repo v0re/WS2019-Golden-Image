@@ -1,0 +1,17 @@
+# 日誌目錄
+Logs/
+*.log
+
+# 臨時檔案
+*.tmp
+*.temp
+
+# Windows 系統檔案
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# 編輯器設定
+.vscode/
+.idea/
+*.swp
