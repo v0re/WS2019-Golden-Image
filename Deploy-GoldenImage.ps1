@@ -92,9 +92,10 @@ try {
         exit 1
     }
 
-    # 複製到工作目錄
+    # 複製到工作目錄（複製資料夾「內容」，而非資料夾本身，避免多一層路徑）
     if (Test-Path $WORK_DIR) { Remove-Item -Path $WORK_DIR -Recurse -Force }
-    Copy-Item -Path $extractedFolder.FullName -Destination $WORK_DIR -Recurse -Force
+    New-Item -ItemType Directory -Path $WORK_DIR -Force | Out-Null
+    Get-ChildItem -Path $extractedFolder.FullName | Copy-Item -Destination $WORK_DIR -Recurse -Force
 
     Write-Host "[OK] 解壓縮完成，檔案位於：$WORK_DIR" -ForegroundColor Green
 } catch {
