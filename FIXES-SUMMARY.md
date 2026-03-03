@@ -221,7 +221,7 @@ winmgmt /resetrepository
 
 如發現任何問題或有改進建議，請在 GitHub 上提交 Issue：
 
-📧 GitHub: https://github.com/v0re/Windows-Server-2019-Golden-Image
+📧 GitHub: https://github.com/v0re/WS2019-Golden-Image
 
 ---
 
