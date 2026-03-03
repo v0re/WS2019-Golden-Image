@@ -5,7 +5,7 @@
 #       無需 Git 安裝，無需金鑰，直接執行即可
 # 使用方式:
 #   以管理員身分執行 PowerShell，然後貼上以下指令：
-#   irm https://raw.githubusercontent.com/v0re/WS2019-Golden-Image/main/Deploy-GoldenImage.ps1 | iex
+#   irm https://raw.githubusercontent.com/v0re/WS2019-Golden-Image/master/Deploy-GoldenImage.ps1 | iex
 #========================================
 
 param(
@@ -37,7 +37,7 @@ Write-Host "[OK] 管理員權限確認" -ForegroundColor Green
 
 # ===== 設定下載來源 =====
 $REPO_URL  = "https://github.com/v0re/WS2019-Golden-Image"
-$ZIP_URL   = "https://github.com/v0re/WS2019-Golden-Image/archive/refs/heads/main.zip"
+$ZIP_URL   = "https://github.com/v0re/WS2019-Golden-Image/archive/refs/heads/master.zip"
 $ZIP_PATH  = "$env:TEMP\WS2019-Golden-Image.zip"
 $EXTRACT   = "$env:TEMP\WS2019-Extract"
 $WORK_DIR  = "$InstallPath"
@@ -84,7 +84,7 @@ Write-Host "[步驟 2/4] 解壓縮檔案..." -ForegroundColor Cyan
 try {
     Expand-Archive -Path $ZIP_PATH -DestinationPath $EXTRACT -Force
 
-    # 找到解壓縮後的資料夾（GitHub 會加上 -main 後綴）
+    # 找到解壓縮後的資料夾（GitHub 會加上 -master 後綴）
     $extractedFolder = Get-ChildItem -Path $EXTRACT -Directory | Select-Object -First 1
 
     if (-not $extractedFolder) {
